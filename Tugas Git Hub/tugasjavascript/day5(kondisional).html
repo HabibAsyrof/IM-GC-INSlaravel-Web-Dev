@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Conditional HTML</title>
+</head>
+<body>
+<h1>Berlatih Kondisional</h1>
+<h3>Masukkan nama dan peranmu!</h3>
+<form action="#" id="formConditional">
+<input type="text" id="nama" placeholder="Isi nama di sini">
+<input type="text" id="peran" placeholder="Isi peran di sini">
+<input type="submit" value="Mulai Permainan">
+</form>
+<h3>Jawaban dari console game: </h3>
+<div id="jawaban">
+</div>
+</body>
+<script> 
+var form = document.getElementById("formConditional") 
+var jawaban = document.getElementById("jawaban")
+ form.addEventListener("submit", function(e) {
+e.preventDefault()
+
+// mengambil nilai dari inputan nama dan peran
+var nama = document.getElementById("nama").value;
+var peran = document.getElementById("peran").value;
+
+// varibel untuk menyimpan jawaban dan kondisi 
+var jawabanKonsol = "";
+
+
+if (nama === "" && peran === "") {
+    jawabanKonsol = "nama nya di isi dulu bang";
+} else if (nama !== "" && peran === "") {
+    jawabanKonsol = `selamat datang ${nama} pilih peran mu untuk memulai game`;
+} else if (peran === "penyihir") {
+    jawabanKonsol = `selamat datang di dunia sihir ${nama},<br> peran kamu ada penyihir`;
+} else if (peran === "werewolf") {
+    jawabanKonsol = `selamat datang di dunia sihi ${nama},<br> peran kamu adalah werewolf`;
+} else if (peran === "damkar") {
+    jawabanKonsol = `selamat datang di dunia sihi ${nama},<br> peran kamu adalah damkar`;
+} else {
+    jawabanKonsol = `halo bang ${nama}, rolenya cuma 3 nih pilih yang ada aja ya`
+}
+
+
+
+
+
+jawaban.innerHTML = jawabanKonsol
+});
+</script>
+</html>

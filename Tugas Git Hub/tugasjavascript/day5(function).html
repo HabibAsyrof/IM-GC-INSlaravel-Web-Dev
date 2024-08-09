@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Function</title>
+</head>
+<body>
+<h1>Berlatih Fungsi</h1>
+<h3>Contoh Soal</h3>
+<div id="contohJawaban">
+</div>
+<h3>Soal No.1</h3>
+<div id="jawaban1">
+</div>
+<h3>Soal No.2</h3>
+<div id="jawaban2">
+</div>
+<h3>Soal No.3</h3>
+<div id="jawaban3">
+</div>
+<script>
+// CONTOH SOAL
+function tampilkan() {
+document.getElementById("contohJawaban").innerHTML = "Aku Tampil" }
+tampilkan()
+
+// jawaban 1
+
+function teriak() {
+document.getElementById("jawaban1").innerHTML = "halo function !"
+}
+teriak()
+
+// cara membuat perkalian
+function kalikan(num1, num2) {
+    return num1 * num2;
+}
+document.getElementById("jawaban2").innerHTML = kalikan(5,4)
+
+
+
+// Soal No. 3 Fungsi buatKalimat
+/* Buatlah sebuah fungsi bernama 
+buatKalimat()
+, yang akan memproses seluruh parameter yang diinput menjadi satu kalimat berikut:
+var kalimatBaru = buatKalimat(name,age,address,hobby); Akan menampilkan : "Nama saya Agus, umur saya 30 tahun, alamat saya di Jln. Malioboro, Yogjakarta, dan saya punya hobby yaitu gaming!" Tampilkan dengan cara document.getElementById("jawaban3").innerHTML seperti di CONTOH
+*/ 
+// Jalankan function buatKalimat var name = "John Doe"; var age = 30; var address = "Jln. Malioboro, Yogjakarta"; var hobby = "gaming"; buatKalimat(name, age, address, hobby);
+
+ function kalimat(name,age,addres,hobby){
+    return `Nama saya ${name}, umur saya ${age}, alamat ${addres} dan saya punya hobby yaitu ${hobby}!`
+}
+
+document.getElementById("jawaban3").innerHTML = kalimat("agus", 30, "Jln. Malioboro, Yogjakarta", "gaming !")
+
+
+
+// ini saya buat karna penasaran
+var nama = "habib asyrof"
+var umur = "13 tahun"
+
+var identitas = `nama saya adalah ${nama} umur saya ${umur}`
+console.log(identitas)
+
+
+</script>
+</body>
+</html>
