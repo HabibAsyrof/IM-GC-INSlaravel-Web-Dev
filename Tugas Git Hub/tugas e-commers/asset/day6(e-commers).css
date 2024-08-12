@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background: crimson !important;
+}
+
+.logitek img {
+    width: 250px;
+}
+
+.logitek {
+    border: 1px solid rgb(207, 207, 207);
+    width: fit-content;
+    padding: 20px;
+    background: #5d53bc;
+    background: linear-gradient(#5145ba);
+
+}
+
+.market h1 {
+    font-size: 30px;
+}
+
+.market button {
+    background-color: aqua;
+}
+
+.market h2 {
+    font-size: 15px;
+}
+
+.market {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-top: 40px;
+    flex-wrap: wrap;
+}
