@@ -38,10 +38,10 @@ const data = [
 ]
 
 
-function updatedata(searchp = '') {
+function databaru(pencarian = '') {
     market.innerHTML = '';
     data.forEach((isidata) => {
-        if(searchp != '' && !isidata.nama.toLowerCase().includes(searchp)) return;
+        if(pencarian != '' && !isidata.nama.toLowerCase().includes(pencarian)) return;
         market.innerHTML += `
         <div class="logitek">
             <img src="${isidata.gambar}" alt="">
@@ -56,20 +56,20 @@ function updatedata(searchp = '') {
 
 
 // keranjang
-form.addEventListener("submit",function(event){
-    event.preventDefault()
-    updatedata(search.value.toLowerCase())
-})
+// form.addEventListener("submit",function(event){
+//     event.preventDefault()
+//     updatedata(search.value.toLowerCase())
+// })
 
-market.addEventListener("click",function(event){
-    if(
-        event.target.classList.contains("add-to-cart")
-    ){
-        keranjang ++ 
-        cart.innerHTML=`<i class="fas fa-shopping-cart"></i>(${keranjang})`
-    }
-})
+// market.addEventListener("click",function(event){
+//     if(
+//         event.target.classList.contains("add-to-cart")
+//     ){
+//         keranjang ++ 
+//         cart.innerHTML=`<i class="fas fa-shopping-cart"></i>(${keranjang})`
+//     }
+// })
 
 
 
-updatedata()
+databaru()
