@@ -1,0 +1,79 @@
+-- 1. Membuat database dengan nama "myshop"
+CREATE DATABASE myshop;
+
+-- 2. Membuat tabel-tabel baru di dalam database "myshop"
+
+-- Menggunakan database "myshop"
+USE myshop;
+
+-- Tabel "users"
+CREATE TABLE users (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
+
+-- Tabel "categories"
+CREATE TABLE categories (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+-- Tabel "items"
+CREATE TABLE items (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    description VARCHAR(255),
+    price INTEGER,
+    stock INTEGER,
+    category_id INTEGER,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+
+-- 3. Memasukkan data ke dalam tabel "users"
+
+INSERT INTO users (name, email) VALUES
+('John Doe', 'john@doe.com'),
+('Jane Doe', 'jane@doe.com');
+
+-- Memasukkan data ke dalam tabel "categories"
+
+INSERT INTO categories (name) VALUES
+('gadget'),
+('cloth'),
+('men'),
+('women');
+
+-- Memasukkan data ke dalam tabel "items"
+
+INSERT INTO items (name, description, price, stock, category_id) VALUES
+('Sumsang b50', 'hape keren dari merek sumsang', 5000, 10, (SELECT id FROM categories WHERE name = 'gadget')),
+('Uniklooh', 'baju keren dari brand ternama', 2000, 50, (SELECT id FROM categories WHERE name = 'cloth')),
+('IMHO Watch', 'jam tangan anak yang jujur banget', 1500, 20, (SELECT id FROM categories WHERE name = 'men'));
+
+-- 4a. Mengambil data seluruh user dari tabel "users" kecuali field password
+SELECT id, name, email
+FROM users;
+
+-- 4b. Mengambil data item dari tabel "items" yang memiliki harga di atas 1.000.000
+SELECT id, name, description, price, stock, category_id
+FROM items
+WHERE price > 1000000;
+
+-- 4c. Menampilkan data item beserta nama kategori menggunakan JOIN
+SELECT items.name AS item_name, items.description, categories.name AS category_name
+FROM items
+JOIN categories ON items.category_id = categories.id;
+
+
+-- 5. Mengubah data pada tabel "items" untuk item dengan nama "Sumsang b50" 
+-- agar harga (price) menjadi 2.500.000
+UPDATE items
+SET price = 2500000
+WHERE name = 'Sumsang b50';
+
+
+
+	
